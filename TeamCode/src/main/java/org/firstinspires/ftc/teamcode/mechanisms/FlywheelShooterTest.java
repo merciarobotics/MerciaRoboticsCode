@@ -9,6 +9,8 @@ public class FlywheelShooterTest {
     private DcMotor rf_wheel; //UltraplanetaryMotor1
     private DcMotor rb_wheel; //UltraplanetaryMotor2
     private DcMotor lb_wheel; //UltraplanetaryMotor2
+    private DcMotor intake1;
+    private DcMotor flywheel1;
 
 
     public void init(HardwareMap hwMap){
@@ -16,18 +18,36 @@ public class FlywheelShooterTest {
         lb_wheel = hwMap.get(DcMotor.class, "lb_wheel"); // match name in config file
         lb_wheel.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         lb_wheel.setDirection(DcMotor.Direction.FORWARD);
+        lb_wheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         lf_wheel = hwMap.get(DcMotor.class, "lf_wheel"); // match name in config file
         lf_wheel.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         lf_wheel.setDirection(DcMotor.Direction.FORWARD);
+        lf_wheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
 
         rb_wheel = hwMap.get(DcMotor.class, "rb_wheel"); // match name in config file
         rb_wheel.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rb_wheel.setDirection(DcMotor.Direction.FORWARD);
+        rb_wheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
 
         rf_wheel = hwMap.get(DcMotor.class, "rf_wheel"); // match name in config file
         rf_wheel.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         rf_wheel.setDirection(DcMotor.Direction.FORWARD);
+        rf_wheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+
+        intake1 = hwMap.get(DcMotor.class, "intake1"); // match name in config file
+        intake1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        intake1.setDirection(DcMotor.Direction.FORWARD);
+        intake1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+
+        flywheel1 = hwMap.get(DcMotor.class, "flywheel1"); // match name in config file
+        flywheel1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        flywheel1.setDirection(DcMotor.Direction.FORWARD);
+        flywheel1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
 
     }    public void setMotorSpeed1(double speed1) {
@@ -42,6 +62,12 @@ public class FlywheelShooterTest {
 
     }   public void setMotorSpeed4(double speed4){
         rb_wheel.setPower(speed4);
+
+    }   public void setMotorSpeed5(double speed5){
+        intake1.setPower(speed5);
+
+    }   public void setMotorSpeed6(double speed6){
+        flywheel1.setPower(speed6);
 
     }
 
