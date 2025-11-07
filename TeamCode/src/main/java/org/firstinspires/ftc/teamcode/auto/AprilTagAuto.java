@@ -19,7 +19,7 @@ public class AprilTagAuto extends LinearOpMode {
     OpenCvCamera camera;
     AprilTagDetectionPipeline pipeline;
 
-    // Camera calibration values (adjust if you calibrate your own camera)
+    // Camera calibration values (adjust if you want calibrate camera)
     double fx = 578.272;
     double fy = 578.272;
     double cx = 402.145;
