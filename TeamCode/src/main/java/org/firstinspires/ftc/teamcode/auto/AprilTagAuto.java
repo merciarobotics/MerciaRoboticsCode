@@ -24,7 +24,7 @@ public class AprilTagAuto extends LinearOpMode {
     double fy = 578.272;
     double cx = 402.145;
     double cy = 221.506;
-    double tagSize = 0.166; // meters
+    double tagSize = 0.206375; // meters
 
     @Override
     public void runOpMode() {
