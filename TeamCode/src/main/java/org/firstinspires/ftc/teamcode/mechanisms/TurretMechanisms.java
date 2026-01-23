@@ -2,7 +2,9 @@ package org.firstinspires.ftc.teamcode.mechanisms;
 
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.telemetry;
 
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class TurretMechanisms {
@@ -16,6 +18,14 @@ public class TurretMechanisms {
         turret.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
 
+
+    }
+    public void setMotorSpeed1(double speed1) {
+        turret.setPower(speed1);
+
+
+    }public int getPosition(){
+        return turret.getCurrentPosition();
 
     }
 
