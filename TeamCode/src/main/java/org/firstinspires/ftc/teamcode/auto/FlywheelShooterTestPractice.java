@@ -4,12 +4,12 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-import org.firstinspires.ftc.teamcode.mechanisms.FlywheelShooterTest;
+import org.firstinspires.ftc.teamcode.mechanisms.RobotOrientatedMechanisms;
 
 @Autonomous
 public class FlywheelShooterTestPractice extends OpMode {
 
-    FlywheelShooterTest test = new FlywheelShooterTest();
+    RobotOrientatedMechanisms test = new RobotOrientatedMechanisms();
 
     @Override
     public void init(){
