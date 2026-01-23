@@ -22,24 +22,24 @@ public class RobotOrientatedMechanisms {
 
         lb_wheel = hwMap.get(DcMotor.class, "leftBack"); // match name in config file
         lb_wheel.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        lb_wheel.setDirection(DcMotor.Direction.FORWARD);
+        lb_wheel.setDirection(DcMotor.Direction.REVERSE);
         lb_wheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         lf_wheel = hwMap.get(DcMotor.class, "leftFront"); // match name in config file
         lf_wheel.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        lf_wheel.setDirection(DcMotor.Direction.REVERSE);
+        lf_wheel.setDirection(DcMotor.Direction.FORWARD);
         lf_wheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
 
         rb_wheel = hwMap.get(DcMotor.class, "rightBack"); // match name in config file
         rb_wheel.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        rb_wheel.setDirection(DcMotor.Direction.REVERSE);
+        rb_wheel.setDirection(DcMotor.Direction.FORWARD);
         rb_wheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
 
         rf_wheel = hwMap.get(DcMotor.class, "rightFront"); // match name in config file
         rf_wheel.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        rf_wheel.setDirection(DcMotor.Direction.FORWARD);
+        rf_wheel.setDirection(DcMotor.Direction.REVERSE);
         rf_wheel.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
 
