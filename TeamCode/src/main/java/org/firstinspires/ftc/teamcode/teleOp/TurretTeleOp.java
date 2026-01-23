@@ -1,10 +1,9 @@
 package org.firstinspires.ftc.teamcode.teleOp;
 
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.telemetry;
-
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.mechanisms.RobotOrientatedMechanisms;
@@ -14,25 +13,20 @@ import org.firstinspires.ftc.teamcode.mechanisms.TurretMechanisms;
 public class TurretTeleOp extends OpMode {
 
     TurretMechanisms mechanisms = new TurretMechanisms();
-    double flywheel;
-    private final DcMotor turret;
 
-    int flywheelState;
-
-    public TurretTeleOp(DcMotor turret) {
-        this.turret = turret;
-    }
-
-
+    @Override
     public void init() {
-        flywheelState = 0;
+        mechanisms.init(hardwareMap);
 
 
     }
-
+    @Override
     public void loop() {
-        turret.setPower(0.0);
-        telemetry.addData("turret", turret.getCurrentPosition());
+        double tics = mechanisms.getPosition();
+        double degrees = tics*360/28;
+
+        mechanisms.setMotorSpeed1(0);
+        telemetry.addData("turret", degrees);
         telemetry.update();
     }
 
