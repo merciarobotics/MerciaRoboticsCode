@@ -112,7 +112,7 @@ public class ConceptAprilTag extends LinearOpMode {
             }
         }
 
-        // Save more CPU resources when camera is no longer needed.
+        // Save more CPU resources when camera is no longer needed. hi hi hi hi hi
         visionPortal.close();
 
     }   // end method runOpMode()

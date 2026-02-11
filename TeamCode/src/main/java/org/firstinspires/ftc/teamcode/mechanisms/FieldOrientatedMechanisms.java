@@ -19,7 +19,7 @@ public class FieldOrientatedMechanisms {
 
     public void init(HardwareMap hwMap){
 
-        servo = hwMap.get(CRServo.class,"servo");
+        servo = hwMap.get(CRServo.class,"servo_pos");
         dir = servo.getDirection();
 
         frontLeftMotor = hwMap.get(DcMotor.class,"leftFront");

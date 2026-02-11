@@ -10,18 +10,33 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 public class TurretMechanisms {
 
     public DcMotor turret;
+    public DcMotor turret2;
 
     public void init(HardwareMap hwMap) {
 
 //        turret.setDirection(DcMotor.Direction.FORWARD);
-        turret = hwMap.get(DcMotor.class, "turret"); // match name in config file
-        turret.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        turret = hwMap.get(DcMotor.class, "turret");
+        turret.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        turret.setDirection(DcMotorSimple.Direction.REVERSE);
+        turret.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        turret2 = hwMap.get(DcMotor.class, "turret2");
+        turret2.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        turret2.setDirection(DcMotorSimple.Direction.REVERSE);
+        turret2.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
 
 
 
     }
-    public void setMotorSpeed1(double speed1) {
-        turret.setPower(speed1);
+    public void setMotorSpeed1(int speed1) {
+        turret.setPower(1.0);
+        turret.setTargetPosition(speed1);
+        turret.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        turret2.setPower(1.0);
+        turret2.setTargetPosition(speed1);
+        turret2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
 
 
     }public int getPosition(){
@@ -29,6 +44,9 @@ public class TurretMechanisms {
 
     }
 
+    public int getTargetPos(){
+        return turret.getTargetPosition();
+    }
 
 
 //

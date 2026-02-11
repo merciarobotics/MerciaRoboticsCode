@@ -13,10 +13,12 @@ import org.firstinspires.ftc.teamcode.mechanisms.TurretMechanisms;
 public class TurretTeleOp extends OpMode {
 
     TurretMechanisms mechanisms = new TurretMechanisms();
+    int pos;
 
     @Override
     public void init() {
         mechanisms.init(hardwareMap);
+        pos = 0;
 
 
     }
@@ -24,9 +26,17 @@ public class TurretTeleOp extends OpMode {
     public void loop() {
         double tics = mechanisms.getPosition();
         double degrees = tics*360/28;
+        if(gamepad1.dpad_up){
+            pos = 6300;
+        }if(gamepad1.dpad_down){
+            pos = 0;
+        }
 
-        mechanisms.setMotorSpeed1(0);
+
+
+        mechanisms.setMotorSpeed1(pos);
         telemetry.addData("turret", degrees);
+        telemetry.addData("turret target" , mechanisms.getTargetPos());
         telemetry.update();
     }
 
